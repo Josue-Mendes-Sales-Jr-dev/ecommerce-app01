@@ -1,3 +1,5 @@
+import Modal from "@/app/components/Modal";
+
 import ProductFrame from "@/app/components/ProductFrame"
 import axios from "axios"
 
@@ -8,15 +10,15 @@ async function getProdutoById(produtoId: any){
 
 }
 
-export default async function Products({params}:any){
+export default async function ModalProducts({params}:any){
     const produto = await getProdutoById(params.id)
     console.log(produto)
     return(
         <>
-         <div className="w-screen h-screen flex justify-center items-center">
-             <ProductFrame {...produto}/>
-         </div>
-
+         <Modal>
+         <ProductFrame {...produto}/>
+         </Modal>
+            
         </>
     )
 }

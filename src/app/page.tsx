@@ -3,7 +3,7 @@ import { Suspense } from "react"
 import List from "../components/list"
 
 export async function getData(){
-  const res= await axios.get("https://jsonplaceholder.typicode.com/photos")
+  const res= await axios.get("https://jsonplaceholder.typicode.com/photos?_limit=20")
   const data= await res.data
   return data
 }
